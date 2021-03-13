@@ -3,6 +3,9 @@ class Time:
         self.__heure = heure
         self.__minutes = minutes
         self.__secondes = secondes
+        if self.__heure > 24:
+            self.__heure = self.__heure%24
+            self.__minutes, self.__secondes = 0,0
 
     def affiche(self, ):
         print("Heure:", self.__heure, "Minutes:", self.__minutes, "Secondes:", self.__secondes)
@@ -14,7 +17,7 @@ class Time:
         self.__secondes += ajout
 
 
-temps = Time(21, 45, 25)
+temps = Time(26, 45, 25)
 temps.affiche()
 temps.convert()
 temps.ajout(15)
