@@ -1,3 +1,6 @@
+import math
+
+
 class Cercle:
     pi = 3.14159
 
@@ -32,3 +35,20 @@ class Cercle:
 
     def getOrdCentre(self):
         return self.__ordCentre
+
+    def interieurCercle(self, absPoint, ordPoint):
+        if math.sqrt((absPoint - self.__absCentre) ** 2 + (ordPoint - self.__ordCentre) ** 2) < self.__rayon:
+            return True
+        else:
+            return False
+
+
+cerc = Cercle(0, 0, 0)
+cerc.setRayon(6)
+cerc.setAbsCentre(4)
+cerc.setOrdCentre(3)
+
+print(cerc)
+print(cerc.aire())
+print(cerc.perimetre())
+print(cerc.interieurCercle(5,1))
